@@ -2,7 +2,7 @@
 
 body {
 	color: #566787;
-	background: #f5f5f5;
+	background: #ffffff;;
 	font-family: 'Roboto', sans-serif;
 }
 .addToDo {
@@ -16,15 +16,26 @@ body {
 	text-align: center;
 	background-color: darkgray;
 }
+.statusCheckBox[type=checkbox] {
+	margin-top: 1px;
+    height: 17px;
+}
 .alert {
 	padding: 8px;
 	margin-top: 10px;
 	margin-bottom: 0px;
-	background-color: #f5f5f5;
     border: none;
+   background-color: #ffffff;
 }
 .modal-open .alert {
 	margin-left: 75px;
+	border: none;
+	background-color: #ffffff;
+}
+.modal-open .viewModeMessage {
+	font-size: 17px;
+    text-align: center;
+    margin-top: 15px;
 }
 .modalClose {
 	text-align: right;
@@ -33,9 +44,6 @@ body {
 }
 .savebutton {
 	background-color: darkgray;
-}
-.datePicker {
-	 background-color: #f5f5f5;
 } 
 .md-datepicker-input-container {
 	padding-bottom: 1px;

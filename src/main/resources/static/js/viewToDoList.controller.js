@@ -25,6 +25,7 @@ app.controller('viewToDoListController', ['$rootScope','$scope', '$http', '$uibM
         $scope.isDisabled = false;
         $scope.isStatusDisabled = (viewMode == 'edit');
         $scope.isDisabled = (viewMode == 'view' );
+        $scope.isViewMode = (viewMode == 'view' && !toDo.status == 'Done');
         if(toDo.status == 'Done') {
             $scope.isStatusDisabled = true;
             $scope.isDisabled = true;

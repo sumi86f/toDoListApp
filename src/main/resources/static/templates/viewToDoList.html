@@ -23,8 +23,9 @@
                         <td>{{toDo.status}}</td>
                         <td>
                             <a href="#" class="view" title="View" data-toggle="tooltip" ng-click="openModal(toDo, 'view')"><i class="material-icons">&#xE417;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip" ng-if = "!(toDo.status == Done)" ng-click="openModal(toDo, 'edit')"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="edit" title="Edit" data-toggle="tooltip" ng-click="openModal(toDo, 'edit')"><i class="material-icons">&#xE254;</i></a>
                             <a href="#" class="delete" title="Delete" data-toggle="tooltip" ng-click="deleteToDo(toDo)"><i class="material-icons">&#xE872;</i></a>
+                            <input type="checkbox" ng-model="toDo.selected" ng-init="toDo.selected=false" title="Mark as done" ng-disabled="toDo.status == 'Done'" ng-click="updateToDo(toDo)" >
                         </td>
                     </tr>
                 </tbody>

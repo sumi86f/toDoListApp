@@ -7,6 +7,9 @@
   <div ng-if="errorMessage.length > 0" class="alert alert-danger"> 
     {{ errorMessage }} 
   </div>
+  <div  class="modalClose">
+    <a href="#" ng-if="isCloseEnabled" ng-click="cancel()"><span>&#215;</span></a>
+  </div>
   <div >
     <form name="toDoListForm" class="form-horizontal" ng-submit="addOrUpdateToDo(toDo)">
       <div class="form-group">
@@ -27,7 +30,7 @@
         <label class="control-label col-sm-2" for="dueDate">Due Date:</label>
         <div class="col-sm-10">
 
-          <md-datepicker class = "datePicker" ng-model="toDo.dueDate" md-placeholder="Enter date" ng-disabled="isDisabled"></md-datepicker>
+          <md-datepicker class="datePicker" md-placeholder="MM-DD-YYYY" ng-model="toDo.dueDate" ng-disabled="isDisabled"></md-datepicker>
         </div>
       </div>
 

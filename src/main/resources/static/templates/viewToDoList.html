@@ -10,6 +10,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Due Date</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -18,6 +19,7 @@
                     <tr ng-repeat="toDo in allToDoList">
                         <td>{{toDo.id}}</td>
                         <td>{{toDo.name}}</td>
+                        <td>{{toDo.dueDate || '_'}}</td>
                         <td>{{toDo.status}}</td>
                         <td>
                             <a href="#" class="view" title="View" data-toggle="tooltip" ng-click="openModal(toDo, 'view')"><i class="material-icons">&#xE417;</i></a>

@@ -14,10 +14,16 @@ app.controller('viewToDoListController', ['$scope', '$http', '$uibModal', functi
             $scope.errorMessage = error.data.details[0];
         });
     }
+    $scope.populateViewModal = function (toDo) {
+        $scope.toDo = {};
+        $scope.toDo.id = toDo.id;
+        $scope.toDo.name = toDo.name;
+        $scope.toDo.description = toDo.description;
+        $scope.toDo.dueDate = (toDo.dueDate == undefined || toDo.dueDate == "") ? "" : new Date(toDo.dueDate);
+    }
 
     $scope.openModal = function(toDo, viewMode) {
-        $scope.toDo = this.toDo;
-
+        $scope.populateViewModal(toDo);
         $uibModal.open({
             templateUrl:  'templates/addToDo.html',
             scope: $scope,
@@ -36,7 +42,7 @@ app.controller('viewToDoListController', ['$scope', '$http', '$uibModal', functi
 
                 };
                 $scope.modalBoxValidation = function(viewMode){
-
+                 $scope.isCloseEnabled = true;
                  $scope.isStatusDisabled = false;
                  $scope.isDisabled = false;
                  $scope.isStatusDisabled = (viewMode == 'edit');
@@ -45,12 +51,13 @@ app.controller('viewToDoListController', ['$scope', '$http', '$uibModal', functi
                     $scope.isStatusDisabled = true;
                     $scope.isDisabled = true;
                 }
-                };
-               $scope.populateStatusOptionOnModal(toDo);
-               $scope.modalBoxValidation(viewMode);
-               
+            };
+            $scope.populateStatusOptionOnModal(toDo);
+            $scope.modalBoxValidation(viewMode);
+
             $scope.addOrUpdateToDo = function (toDo) {
                 toDo.status = $scope.status.selectedOption.name;
+                toDo.dueDate = (toDo.dueDate == undefined || toDo.dueDate == "") ? "" : moment(toDo.dueDate).format("YYYY-MM-DD");
                 $http({
                     method: 'PUT',
                     url: 'todo/update',
@@ -65,8 +72,8 @@ app.controller('viewToDoListController', ['$scope', '$http', '$uibModal', functi
             $scope.cancel = function () {
                 $uibModalInstance.dismiss('cancel'); 
             };
-        
-    },
-});
+
+        },
+    });
 }
 }]);

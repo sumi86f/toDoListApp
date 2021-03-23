@@ -3,6 +3,7 @@ app.controller('addToDoController', ['$rootScope','$scope', '$http', function($r
     $scope.toDo = {};   
     $scope.isStatusDisabled = true;
     $scope.isDisabled = false;
+    $scope.isCloseEnabled = false;
 
     $scope.populateData = function () {
         $http({
@@ -50,5 +51,5 @@ app.controller('addToDoController', ['$rootScope','$scope', '$http', function($r
         }, function (error) {
             $scope.errorMessage = error.data.details[0];
         });
-};   
+    };   
 }])

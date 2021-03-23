@@ -33,12 +33,12 @@
             <h1>{{toDoApplicationTitle}}</h1>
         </div>
         <div ng-controller="addToDoController" class="addToDo">
-           <a href="addToDo"><button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse"
-           data-target=".form-horizontal" aria-expanded="true"
-           aria-controls="collapseOne">Create Task</button></a>
-       </div>
-       <div ng-view></div>
-       <div ng-include="'templates/viewToDoList.html'"></div>
-   </div>
-</body>
-</html>
+         <a href="addToDo"><button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse"
+             data-target=".form-horizontal" aria-expanded="true"
+             aria-controls="collapseOne"><span class= "plusIcon">&#8853;</span>Create Task</button></a>
+         </div>
+         <div ng-view></div>
+         <div ng-include="'templates/viewToDoList.html'"></div>
+     </div>
+ </body>
+ </html>

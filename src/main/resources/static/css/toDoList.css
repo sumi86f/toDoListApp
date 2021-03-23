@@ -6,7 +6,11 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 .addToDo {
-	text-align: right;
+	text-align: left;
+}
+.plusIcon {
+	font-size: 15px;
+    padding-right: 4px;
 }
 .toDoHeader {
 	text-align: center;
@@ -15,10 +19,17 @@ body {
 .alert {
 	padding: 8px;
 	margin-top: 10px;
-	width: 60%;
+	margin-bottom: 0px;
+	background-color: #f5f5f5;
+    border: none;
 }
 .modal-open .alert {
 	margin-left: 75px;
+}
+.modalClose {
+	text-align: right;
+    margin-right: 30px;
+    font-size: 35px;
 }
 .savebutton {
 	background-color: darkgray;

@@ -1,0 +1,44 @@
+
+<html lang="en" ng-app="toDoListApp">
+<head>
+    <meta charset="UTF-8" />
+    <title>To-Do List Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.js"></script>
+    <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <script src="../app/app.module.js"></script>
+    <script src="../js/toDoList.controller.js"></script>
+    <script src="../js/addToDo.controller.js"></script>
+    <script src="../js/viewToDoList.controller.js"></script>
+    <link rel="stylesheet" href="../css/toDoList.css" />
+</head>
+<body >
+    <div class="container">
+        <div class="toDoHeader" ng-controller="toDoListController">
+            <h1>{{toDoApplicationTitle}}</h1>
+        </div>
+        <div ng-controller="addToDoController" class="addToDo">
+           <a href="addToDo"><button class="btn btn-secondary btn-sm" type="button" data-toggle="collapse"
+           data-target=".form-horizontal" aria-expanded="true"
+           aria-controls="collapseOne">Create Task</button></a>
+       </div>
+       <div ng-view></div>
+       <div ng-include="'templates/viewToDoList.html'"></div>
+   </div>
+</body>
+</html>

@@ -35,7 +35,7 @@ public class ToDo {
 	@NotEmpty(message = "Status cannot be empty")
 	String status;
 
-	@FutureOrPresent
+	@FutureOrPresent(message = "Due date must be a date in the present or future")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	LocalDate dueDate;
 
